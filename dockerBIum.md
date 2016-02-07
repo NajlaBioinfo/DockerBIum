@@ -14,7 +14,7 @@
   <div>
     <header>
         <section style="color:blue;float:left;padding-right:20px;">
-        <img src="/Users/remindNahool/APPS_2016/BHlogos/bannerDocker.png" style="width:250px;height:200px;">
+        <img src="Imgs/DockerBIum.png" style="width:250px;height:200px;">
         </section>
         <section style="color:navy;float:left;padding-left:15px;">
         <h1>DockerBIum</h1>
