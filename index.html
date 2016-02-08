@@ -1,0 +1,218 @@
+<!doctype html>
+<!-- The Time Machine GitHub pages theme was designed and developed by Jon Rohan, on Feb 7, 2012. -->
+<!-- Follow him for fun. http://twitter.com/jonrohan. Tail his code on https://github.com/jonrohan -->
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <link rel="stylesheet" href="stylesheets/stylesheet.css" media="screen">
+  <link rel="stylesheet" href="stylesheets/github-dark.css">
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+  <script type="text/javascript" src="javascripts/script.js"></script>
+
+  <title>Dockerbium</title>
+  <meta name="description" content="Reproducible bioinformatics workspace with docker under Centos7.">
+
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+</head>
+
+<body>
+
+  <div class="wrapper">
+    <header>
+      <h1 class="title">Dockerbium</h1>
+    </header>
+    <div id="container">
+      <p class="tagline">Reproducible bioinformatics workspace with docker under Centos7.</p>
+      <div id="main" role="main">
+        <div class="download-bar">
+        <div class="inner">
+          <a href="https://github.com/NajlaBioinfo/DockerBIum/tarball/master" class="download-button tar"><span>Download</span></a>
+          <a href="https://github.com/NajlaBioinfo/DockerBIum/zipball/master" class="download-button zip"><span>Download</span></a>
+          <a href="https://github.com/NajlaBioinfo/DockerBIum" class="code">View Dockerbium on GitHub</a>
+        </div>
+        <span class="blc"></span><span class="trc"></span>
+        </div>
+        <article class="markdown-body">
+          <p>
+</p>
+  
+  
+  
+  
+
+
+     
+         
+        <img src="Imgs/littleDockerBIum.png">
+         
+         
+        <h1>
+<a id="dockerbium" class="anchor" href="#dockerbium" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>DockerBIum</h1>
+        <blockquote>Reproducible bioinformatics workspace with docker under Centos7.</blockquote>
+        <h2>
+<a id="pull-the-image" class="anchor" href="#pull-the-image" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Pull the image</h2>
+        <p> <a href="https://hub.docker.com/r/najlabioinfo/najlabioinfospace"></a><a href="https://hub.docker.com/r/najlabioinfo/najlabioinfospace/">https://hub.docker.com/r/najlabioinfo/najlabioinfospace/</a></p><p>
+        </p> 
+     
+ 
+ 
+
+<h1 id="idtitle1">
+<a id="i-what-is-this" class="anchor" href="#i-what-is-this" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>I. What is this?</h1>
+
+<p>Reproducible bioinformatics workspace with docker under Centos7.</p>
+
+<h1 id="idtitle2">
+<a id="ii-how-to-use-it" class="anchor" href="#ii-how-to-use-it" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>II. How to use it?</h1>
+
+<h2>
+<a id="ii1-requirements" class="anchor" href="#ii1-requirements" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>II.1/ Requirements</h2>
+
+<ul>
+<li>Docker: <a href="https://docs.docker.com"></a><a href="https://docs.docker.com">https://docs.docker.com</a> 
+<h2>
+<a id="ii2-usage" class="anchor" href="#ii2-usage" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>II.2/ Usage</h2>
+<ul>
+<li>a) From the image </li>
+<code>docker pull najlabioinfo/najlabioinfospace </code>
+<li>b) From the Dockerfile</li>
+<code>docker build --tag="yourTag" --file="/pathto/Dockerfile"</code>
+<div>
+<p> * Dockerfile sample </p>
+<pre><code>############################################################ 
+# Dockerfile based on Centos Image 
+############################################################ 
+# Set the base image to use to Centos
+FROM centos:7
+# Set the file maintainer (your name - the file's author) 
+MAINTAINER "Najla BEN HASSSINE" <a href="mailto:bhndevtools@gmail.com">bhndevtools@gmail.com</a>
+#Prepare env and extra-package install
+RUN yum install -y sudo epel-release-7-5.noarch.rpm deltarpm
+#MAKE PATH SHAR
+RUN mkdir -p /usr/share/info
+RUN useradd najlabioinfo \
+&amp;&amp; chown najlabioinfo:najlabioinfo /home/najlabioinfo
+#Install devtools
+RUN yum -y groupinstall "Development Tools"<br>
+RUN yum -y install curl git irb m4 ruby texinfo bzip2-devel curl-devel expat-devel ncurses-devel zlib-devel ghostscript wget cmake git github-backup pandoc gcc g++ kernel-devel htop kpathsea which latex web2c dvips libRmath-devel libRmath zip libreadline-dev readline-devel libreadline pdftailor pdftk mozilla tiff2pdf qpdf xpdf evince which gcc-c++ cairo-devel libpng-devel libX11 libX11-devel qt libjpeg-turbo java info xorg-x11-server-Xvfb firefox texlive
+#Needed package for R
+RUN yum -y groupinstall X11
+RUN yum install -y  libXt-dev libgtk2.0-dev libcairo2-dev xvfb xauth xfonts-base zip libreadline-dev readline-devel libreadline pdftailor pdftk mozilla tiff2pdf texlive qpdf xpdf evince which pdftohtml texinfo inconsolata-fonts
+#Updating package
+RUN yum update -y
+#Install Dev packages
+RUN yum install -y  curl gcc make perl git perl-devel expat-devel zlib-devel libbamtools links pdftohtml
+#METHODE A : Sample
+#-INSTALL firepony
+RUN curl -o /etc/yum.repos.d/packages.shadau.com.repo \
+<a href="http://packages.shadau.com/rpm/centos-7/packages.shadau.com.repo">http://packages.shadau.com/rpm/centos-7/packages.shadau.com.repo</a>
+RUN yum install -y firepony</code></pre>
+</div>
+<p> &gt;&gt; Message success build: Successfully built ID_CONTAINER </p>
+<br>
+<li>c) Upgrading</li>
+<p>The newest version will be always tagged as latest.</p>
+</ul>
+<br>
+<h2>
+<a id="ii3-running" class="anchor" href="#ii3-running" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>II.3/ Running</h2>
+<ul> - Bioinformatics tools :
+<li>R<br><pre><code>docker run -it najlabioinfo/najlabioinfospace R</code></pre>
+</li>
+<li>fastqc<br><pre><code>docker run -it najlabioinfo/najlabioinfospace fastqc --help</code></pre>
+</li>
+<li>BWA<br><pre><code>docker run -ti najlabioinfo/najlabioinfospace bwa meme</code></pre>
+</li>
+<li>bowtie2 <br><pre><code>docker run -it najlabioinfo/najlabioinfospace bowtie2 --help</code></pre>
+</li>
+</ul>
+<h1 id="idtitle3">
+<a id="iii-resources" class="anchor" href="#iii-resources" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>III. Resources</h1>
+<h2>
+<a id="iii1-documentation" class="anchor" href="#iii1-documentation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>III.1/ Documentation</h2>
+<p>A comprehensive documentation for docker library is here: <a href="https://github.com/docker-library/docs"></a><a href="https://github.com/docker-library/docs">https://github.com/docker-library/docs</a></p>
+<p>If you have doubt on how to use Docker, please visit the Docker website : <a href="https://docs.docker.com/engine/reference/builder/"></a><a href="https://docs.docker.com/engine/reference/builder/">https://docs.docker.com/engine/reference/builder/</a></p>
+<h2>
+<a id="iii2-references" class="anchor" href="#iii2-references" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>III.2/ References</h2>
+<ul>
+<li>(ubuntu:14.04.3): Biodocker project: <a href="https://gitter.im/BioDocker/biodocker"></a><a href="https://github.com/BioDocker/biodocker">https://github.com/BioDocker/biodocker</a> </li>
+<li>(Debian): Moreews F, Sallou O, Ménager H et al. <em>BioShaDock: a community driven bioinformatics shared Docker-based tools registry</em> [version 1; referees: 2 approved]. F1000Research 2015, 4:1443 (doi: 10.12688/f1000research.7536.1)</li>
+<li>(Scientific Linux 6.5): Di Tommaso P, Palumbo E, Chatzou M, Prieto P, Heuer ML, Notredame C. <em>The impact of Docker containers on the performance of genomic pipelines.</em> Campagne F, ed. PeerJ. 2015;3:e1273. doi:10.7717/peerj.1273.</li>
+<li>(R): Launch R directly for interactive work here <a href="https://hub.docker.com/_/r-base/"></a><a href="https://hub.docker.com/_/r-base">https://hub.docker.com/_/r-base</a>
+</li>
+</ul>
+<h1 id="idtitle4">
+<a id="iv-issues-and-contributing" class="anchor" href="#iv-issues-and-contributing" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>IV. Issues and Contributing</h1> 
+<h2>
+<a id="iv1-support" class="anchor" href="#iv1-support" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>IV.1/ Support</h2>
+<p>
+If you are having issues, please let me know.
+</p>
+<h2>
+<a id="iv2-contribute" class="anchor" href="#iv2-contribute" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>IV.2/ Contribute</h2>
+<p>Bug reports, bug fixes, and new features are always welcome.<br></p>
+</li>
+<li>Issue Tracker: <a href="https://github.com/NajlaBioinfo/DockerBIum/issues">github</a><br>
+</li>
+<li>Source Code: <a href="https://github.com/NajlaBioinfo/DockerBIum/pulls">github</a>
+<h2 id="idtitleE">
+<a id="iv3-authors-and-maintainers" class="anchor" href="#iv3-authors-and-maintainers" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>IV.3/ Authors and Maintainers</h2>
+<p>BEN HASSINE NAJLA : <a href="MAILTO:bhndevtools@gmail.com?Subject=DockerBIum"></a><a href="mailto:bhndevtools@gmail.com">bhndevtools@gmail.com</a></p>
+ 
+ BHNtools-copyright2016© 
+ 
+</li>
+</ul> 
+ 
+<br>
+<hr>
+ 
+<div>Topics<br>
+<a href="#idtitle1">I. What is this?</a>
+<br>
+<a href="#idtitle2">II. How to use it?</a>
+<br>
+<a href="#idtitle3">III. Resources</a>
+<br>
+<a href="#idtitle4">IV. Issues and Contributing</a>
+</div>
+ 
+
+
+
+        </article>
+      </div>
+    </div>
+    <footer>
+      <div class="owner">
+      <p><a href="https://github.com/NajlaBioinfo" class="avatar"><img src="https://avatars3.githubusercontent.com/u/4473566?v=3&amp;s=60" width="48" height="48"></a> <a href="https://github.com/NajlaBioinfo">NajlaBioinfo</a> maintains <a href="https://github.com/NajlaBioinfo/DockerBIum">Dockerbium</a></p>
+
+
+      </div>
+      <div class="creds">
+        <small>This page generated using <a href="https://pages.github.com/">GitHub Pages</a><br>theme by <a href="https://twitter.com/jonrohan/">Jon Rohan</a></small>
+      </div>
+    </footer>
+  </div>
+  <div class="current-section">
+    <a href="#top">Scroll to top</a>
+    <a href="https://github.com/NajlaBioinfo/DockerBIum/tarball/master" class="tar">tar</a><a href="https://github.com/NajlaBioinfo/DockerBIum/zipball/master" class="zip">zip</a><a href="" class="code">source code</a>
+    <p class="name"></p>
+  </div>
+
+            <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-73441447-1");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
+</body>
+</html>
