@@ -8,7 +8,7 @@
 <body>
     <header>
         <section style="color:blue;float:left;padding-right:20px;">
-        <img src="Imgs/DockerBIum.png" style="width:150px;height:150px;">
+        <img src="Imgs/littleDockerBIum.png" style="width:150px;height:150px;">
         </section>
         <section style="color:navy;float:left;padding-left:15px;">
         <h1>DockerBIum</h1>
