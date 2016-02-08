@@ -48,30 +48,37 @@
 ############################################################ 
 # Set the base image to use to Centos
 FROM centos:7
+
 # Set the file maintainer (your name - the file's author) 
 MAINTAINER "Najla BEN HASSSINE" bhndevtools@gmail.com
-ENV LC_ALL en_US.UTF-8 
-ENV LANG en_US.UTF-8
 
-#install mysql
-RUN yum install -y mysql mysql-server
-RUN echo "NETWORKING=yes" > /etc/sysconfig/network
+#Prepare env and extra-package install
+RUN yum install -y sudo epel-release-7-5.noarch.rpm deltarpm
 
-# start mysqld to create initial tables 
-RUN service mysqld start
-# install php 
-RUN yum install -y php php-mysql php-devel php-gd php-pecl-memcache php-pspell php-snmp php-xmlrpc php-xml
-# install supervisord
-RUN yum install -y python-pip && pip install pip --upgrade
-RUN pip install supervisor
-# install sshd 
-RUN yum install -y openssh-server openssh-clients passwd
-RUN ssh-keygen -q -N "" -t dsa -f /etc/ssh/ssh_host_dsa_key && ssh-keygen -q -N "" -t rsa -f /etc/ssh/ssh_host_rsa_key 
-RUN sed -ri 's/UsePAM yes/UsePAM no/g' /etc/ssh/sshd_config && echo 'root:changeme' | chpasswd
-ADD phpinfo.php /var/www/html/
-ADD supervisord.conf /etc/
-EXPOSE 22 80 CMD ["supervisord", "-n"]
+#MAKE PATH SHAR
+RUN mkdir -p /usr/share/info
+RUN useradd najlabioinfo \
+    && chown najlabioinfo:najlabioinfo /home/najlabioinfo
 
+#Install devtools
+RUN yum -y groupinstall "Development Tools"  
+RUN yum -y install curl git irb m4 ruby texinfo bzip2-devel curl-devel expat-devel ncurses-devel zlib-devel ghostscript wget cmake git github-backup pandoc gcc g++ kernel-devel htop kpathsea which latex web2c dvips libRmath-devel libRmath zip libreadline-dev readline-devel libreadline pdftailor pdftk mozilla tiff2pdf qpdf xpdf evince which gcc-c++ cairo-devel libpng-devel libX11 libX11-devel qt libjpeg-turbo java info xorg-x11-server-Xvfb firefox texlive
+
+#Needed package for R
+RUN yum -y groupinstall X11
+RUN yum install -y  libXt-dev libgtk2.0-dev libcairo2-dev xvfb xauth xfonts-base zip libreadline-dev readline-devel libreadline pdftailor pdftk mozilla tiff2pdf texlive qpdf xpdf evince which pdftohtml texinfo inconsolata-fonts
+
+#Updating package
+RUN yum update -y
+
+#Updating package
+RUN yum install -y  curl gcc make perl git perl-devel expat-devel zlib-devel libbamtools links pdftohtml
+
+#METHODE A : Sample
+#-INSTALL firepony
+RUN curl -o /etc/yum.repos.d/packages.shadau.com.repo \
+    http://packages.shadau.com/rpm/centos-7/packages.shadau.com.repo
+RUN yum install -y firepony
 </code></pre>
 <br>
 <li>c) Upgrading</li>
