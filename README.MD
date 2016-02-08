@@ -7,11 +7,24 @@
 </head>
 
 <body>
+<aside style='float:right; font:bold; color:navy; align:center; font-size:small; border: 1.5px solid; border-radius:20px; width:200px;'>
+<!--div style="font:bold;color:navt;align:center;font-size:small; border: 2px solid; border-radius:25px;"-->
+<div style='font:bold;width:250px;padding-left:5px; padding-right:5px; margin-left:5px;'>Topics
+<br>
+<a href=#idtitle1>I. What is this?</a>
+<br>
+<a href=#idtitle2>II. How to use it?</a>
+<br>
+<a href=#idtitle3>III. Resources</a>
+<br>
+<a href=#idtitle4>IV. Issues and Contributing</a>
+</div>
+</aside>
 <article>
   <div>
     <header>
         <section style="color:blue;float:left;padding-right:20px;">
-        <img src="Imgs/DockerBIum.png" style="width:250px;height:200px;">
+        <img src="Imgs/DockerBIum.png" style="width:150px;height:100px;">
         </section>
         <section style="color:navy;float:left;padding-left:15px;">
         <h1>DockerBIum</h1>
@@ -68,7 +81,7 @@ RUN yum install -y  libXt-dev libgtk2.0-dev libcairo2-dev xvfb xauth xfonts-base
 #Updating package
 RUN yum update -y
 
-#Updating package
+#Install Dev packages
 RUN yum install -y  curl gcc make perl git perl-devel expat-devel zlib-devel libbamtools links pdftohtml
 
 #METHODE A : Sample
@@ -127,18 +140,5 @@ If you are having issues, please let me know.
 </section>
 </section>
 </article>
-<aside style='float:right; font:bold; color:navy; align:center; font-size:small; border: 1.5px solid; border-radius:20px; width:200px;'>
-<!--div style="font:bold;color:navt;align:center;font-size:small; border: 2px solid; border-radius:25px;"-->
-<div style='font:bold;width:250px;padding-left:5px; padding-right:5px; margin-left:5px;'>Topics
-<br>
-<a href=#idtitle1>I. What is this?</a>
-<br>
-<a href=#idtitle2>II. How to use it?</a>
-<br>
-<a href=#idtitle3>III. Resources</a>
-<br>
-<a href=#idtitle4>IV. Issues and Contributing</a>
-</div>
-</aside>
 </body>
 </html>
