@@ -8,19 +8,6 @@
 
 <body>
 <aside style='float:right; font:bold; color:navy; align:center; font-size:small; border: 1.5px solid; border-radius:20px; width:200px;'>
-<!--div style="font:bold;color:navt;align:center;font-size:small; border: 2px solid; border-radius:25px;"-->
-<div style='font:bold;width:250px;padding-left:5px; padding-right:5px; margin-left:5px;'>Topics
-<br>
-<a href=#idtitle1>I. What is this?</a>
-<br>
-<a href=#idtitle2>II. How to use it?</a>
-<br>
-<a href=#idtitle3>III. Resources</a>
-<br>
-<a href=#idtitle4>IV. Issues and Contributing</a>
-</div>
-</aside>
-<article>
   <div>
     <header>
         <section style="color:blue;float:left;padding-right:20px;">
@@ -36,6 +23,18 @@
         <br>
     </header>
  </div>
+<div style='font:bold;width:250px;padding-left:5px; padding-right:5px; margin-left:5px;'>Topics
+<br>
+<a href=#idtitle1>I. What is this?</a>
+<br>
+<a href=#idtitle2>II. How to use it?</a>
+<br>
+<a href=#idtitle3>III. Resources</a>
+<br>
+<a href=#idtitle4>IV. Issues and Contributing</a>
+</div>
+</aside>
+<article>
 <section id="content"style="color:black;float:left;">
 <h1 id='idtitle1'>I. What is this?</h1>
 <p>Reproducible bioinformatics workspace with docker under Centos7.</p>
