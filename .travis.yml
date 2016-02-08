@@ -9,4 +9,4 @@ before_install:
 - docker pull najlabioinfo/najlabioinfospace
 
 script:
-- docker run -it najlabioinfo/najlabioinfospace R
+- docker run -it najlabioinfo/najlabioinfospace fastqc --help
