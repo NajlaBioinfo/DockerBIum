@@ -5,13 +5,11 @@
   <title>DockerBIum</title>
   <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
 </head>
-
 <body>
-<aside style='float:right; font:bold; color:navy; align:center; font-size:small; border: 1.5px solid; border-radius:20px; width:200px;'>
-  <div>
+ <div>
     <header>
         <section style="color:blue;float:left;padding-right:20px;">
-        <img src="Imgs/DockerBIum.png" style="width:150px;height:100px;">
+        <img src="Imgs/DockerBIum.png" style="width:50px;height:20px;">
         </section>
         <section style="color:navy;float:left;padding-left:15px;">
         <h1>DockerBIum</h1>
@@ -23,32 +21,18 @@
         <br>
     </header>
  </div>
-<div style='font:bold;width:250px;padding-left:5px; padding-right:5px; margin-left:5px;'>Topics
-<br>
-<a href=#idtitle1>I. What is this?</a>
-<br>
-<a href=#idtitle2>II. How to use it?</a>
-<br>
-<a href=#idtitle3>III. Resources</a>
-<br>
-<a href=#idtitle4>IV. Issues and Contributing</a>
-</div>
-</aside>
 <article>
 <section id="content"style="color:black;float:left;">
 <h1 id='idtitle1'>I. What is this?</h1>
 <p>Reproducible bioinformatics workspace with docker under Centos7.</p>
-
+<br>
 <h1 id='idtitle2'>II. How to use it?</h1>
 <h2>II.1/ Requirements</h2>
 * Docker: <a href="https://docs.docker.com">https://docs.docker.com </a>
-
-
 <h2>II.2/ Usage</h2>
 <ul>
 <li>a) From the image </li>
 <code style='background: #C0C0C0;'>docker pull najlabioinfo/najlabioinfospace </code>
-
 <li>b) From the Dockerfile</li>
 <code style='background: #C0C0C0;'>docker build --tag="yourTag" --file="/pathto/Dockerfile"</code>
 <p> * Dockerfile sample </p>
@@ -117,12 +101,10 @@ RUN yum install -y firepony
 <li>(ubuntu:14.04.3): Biodocker project: <a href="https://gitter.im/BioDocker/biodocker">https://github.com/BioDocker/biodocker</a> </li>
 <li>(Debian): Moreews F, Sallou O, Ménager H et al. <em style="font: bold;">BioShaDock: a community driven bioinformatics shared Docker-based tools registry</em> [version 1; referees: 2 approved]. F1000Research 2015, 4:1443 (doi: 10.12688/f1000research.7536.1)</li>
 <li>(Scientific Linux 6.5): Di Tommaso P, Palumbo E, Chatzou M, Prieto P, Heuer ML, Notredame C. <em style="font: bold;">The impact of Docker containers on the performance of genomic pipelines.</em> Campagne F, ed. PeerJ. 2015;3:e1273. doi:10.7717/peerj.1273.</li>
-
 <li>(R): Launch R directly for interactive work here <a href="https://hub.docker.com/_/r-base/">https://hub.docker.com/_/r-base</a>
 </ul>
 <br>
 <br>
-
 <h1 id='idtitle4'>IV. Issues and Contributing</h1> 
 <h2>IV.1/ Support</h2>
 <p>
@@ -139,5 +121,17 @@ If you are having issues, please let me know.
 </section>
 </section>
 </article>
+<aside style='float:right; font:bold; color:navy; align:center; font-size:small; border: 1.5px solid; border-radius:20px; width:200px;'>
+ <div style='font:bold;width:250px;padding-left:5px; padding-right:5px; margin-left:5px;'>Topics
+<br>
+<a href=#idtitle1>I. What is this?</a>
+<br>
+<a href=#idtitle2>II. How to use it?</a>
+<br>
+<a href=#idtitle3>III. Resources</a>
+<br>
+<a href=#idtitle4>IV. Issues and Contributing</a>
+</div>
+</aside>
 </body>
 </html>
