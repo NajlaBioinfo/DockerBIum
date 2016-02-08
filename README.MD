@@ -10,6 +10,7 @@
         <section style="color:blue;float:left;padding-right:20px;">
         <img src="Imgs/littleDockerBIum.png" style="width:150px;height:150px;">
         </section>
+        [![Build Status](https://travis-ci.org/NajlaBioinfo/DockerBIum.svg?branch=master)](https://travis-ci.org/NajlaBioinfo/DockerBIum)
         <section style="color:navy;float:left;padding-left:15px;">
         <h1>DockerBIum</h1>
         <blockquote>Reproducible bioinformatics workspace with docker under Centos7.</blockquote>
