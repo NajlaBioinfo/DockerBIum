@@ -45,7 +45,7 @@
 
      
          
-        <img src="https://github.com/NajlaBioinfo/DockerBIum/Imgs/littleDockerBIum.png">
+        <img src="https://github.com/NajlaBioinfo/DockerBIum/blob/master/Imgs/littleDockerBIum.png">
          
          
         <h1>
@@ -79,8 +79,8 @@
 <code>docker pull najlabioinfo/najlabioinfospace </code>
 <li>b) From the Dockerfile</li>
 <code>docker build --tag="yourTag" --file="/pathto/Dockerfile"</code>
+<div>
 <p> * Dockerfile sample </p>
-</ul>
 <pre><code>############################################################ 
 # Dockerfile based on Centos Image 
 ############################################################ 
@@ -108,11 +108,10 @@ RUN yum install -y  curl gcc make perl git perl-devel expat-devel zlib-devel lib
 #-INSTALL firepony
 RUN curl -o /etc/yum.repos.d/packages.shadau.com.repo \
 <a href="http://packages.shadau.com/rpm/centos-7/packages.shadau.com.repo">http://packages.shadau.com/rpm/centos-7/packages.shadau.com.repo</a>
-RUN yum install -y firepony
-</code></pre>
+RUN yum install -y firepony</code></pre>
+</div>
 <p> &gt;&gt; Message success build: Successfully built ID_CONTAINER </p>
 <br>
-</li>
 <li>c) Upgrading</li>
 The newest version will be always tagged as latest.
 </ul>
@@ -121,9 +120,11 @@ The newest version will be always tagged as latest.
 <a id="ii3-running" class="anchor" href="#ii3-running" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>II.3/ Running</h2>
 <ul> - Bioinformatics tools :
 <li>R</li>
-</ul><pre><code>docker run -it najlabioinfo/najlabioinfospace R</code></pre>
-fastqc
-<pre><code>docker run -it najlabioinfo/najlabioinfospace fastqc --help</code></pre>
+</ul>
+<pre><code>docker run -it najlabioinfo/najlabioinfospace R</code></pre>
+</li>
+<li>fastqc</li>
+</ul><pre><code>docker run -it najlabioinfo/najlabioinfospace fastqc --help</code></pre>
 BWA
 <pre><code>docker run -ti najlabioinfo/najlabioinfospace bwa meme</code></pre>
 bowtie2
@@ -164,6 +165,7 @@ Source Code: <a href="https://github.com/NajlaBioinfo/DockerBIum/pulls">github</
  
  
  
+<hr>
  
 <div>Topics<br>
 <a href="#idtitle1">I. What is this?</a>
