@@ -2,10 +2,10 @@ env:
   global:
     - BRANCH=v1.0.0
 
-sudo: true
-
-install:
-  - curl -sLo - http://j.mp/install-travis-docker | sh -xe
+#sudo: true
+ sudo: false
+#install:
+#  - curl -sLo - http://j.mp/install-travis-docker | sh -xe
 
 script:
   - ./run 'docker pull najlabioinfo/najlabioinfospace'
