@@ -1,11 +1,14 @@
-env:
-  global:
-    - BRANCH=v1.0.0
+sudo: required
 
-#sudo: true
- sudo: false
-#install:
-#  - curl -sLo - http://j.mp/install-travis-docker | sh -xe
+language: ruby
+
+services:
+- docker
+
+before_install:
+- docker pull najlabioinfo/najlabioinfospace
 
 script:
-  - ./run 'docker pull najlabioinfo/najlabioinfospace'
+- bundle exec rake test
+
+- ./run 'docker run -it najlabioinfo/najlabioinfospace R'
