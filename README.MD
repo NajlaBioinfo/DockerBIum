@@ -2,15 +2,15 @@
 <html>
 <head>
   <meta charset="utf-8" />
-  <title>DockerBIum</title>
-  <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+  <!--title>DockerBIum</title-->
+  <!--script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script-->
 </head>
 <body>
     <header>
         <section style="color:blue;float:left;padding-right:20px;">
         <img src="Imgs/littleDockerBIum.png" style="width:150px;height:150px;">
-        [![Build Status](https://travis-ci.org/NajlaBioinfo/DockerBIum.svg?branch=master)](https://travis-ci.org/NajlaBioinfo/DockerBIum)
-        [![DOI](https://zenodo.org/badge/20325/NajlaBioinfo/DockerBIum.svg)](https://zenodo.org/badge/latestdoi/20325/NajlaBioinfo/DockerBIum)
+        <!--[![Build Status](https://travis-ci.org/NajlaBioinfo/DockerBIum.svg?branch=master)](https://travis-ci.org/NajlaBioinfo/DockerBIum)
+        [![DOI](https://zenodo.org/badge/20325/NajlaBioinfo/DockerBIum.svg)](https://zenodo.org/badge/latestdoi/20325/NajlaBioinfo/DockerBIum)-->
         </section>
         <section style="color:navy;float:left;padding-left:15px;">
         <h1>DockerBIum</h1>
