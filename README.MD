@@ -15,6 +15,7 @@
         <section style="color:navy;float:left;padding-left:15px;">
         <h1>DockerBIum</h1>
         <blockquote>Reproducible bioinformatics workspace with docker under Centos7.</blockquote>
+          <a href="http://najlabioinfo.github.io/DockerBIum/">http://najlabioinfo.github.io/DockerBIum</a>
         <h2>Pull the image</h2>
         <p style="color: green; font: italic bold 12px/30px Georgia, serif;"> <a href="https://hub.docker.com/r/najlabioinfo/najlabioinfospace">https://hub.docker.com/r/najlabioinfo/najlabioinfospace/</a><p>
         </section>
